@@ -4,13 +4,25 @@ app.controller('mainController',function($scope){
   $scope.computer = 0;
 
   $scope.play = function(youSelect){
-    var computerSelect = computerSelection();
+    
+    var computerSelect = getComputerSelection();
     var result = processGame[youSelect][computerSelect];
 
-    alert("" + youSelect + " -> " + computerSelect + " -> " + result);
-  }
+    alert("Computer choose: " + computerSelect);
 
-  var computerSelection = function(){
+    switch(result) {
+    case -1:
+        $scope.computer += 1;
+        break;
+    case 1:
+        $scope.you += 1;
+        break;
+    default:
+    }
+
+  };
+
+  var getComputerSelection = function(){
 
     var number = Math.floor(Math.random() * 3) + 1;
 
