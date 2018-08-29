@@ -5,11 +5,20 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 </head>
 <body ng-app="rockPaperScissorsApp">
 
 <div ng-controller="mainController">
-  <button type="button" class="btn btn-primary" ng-click="startGame()">Start</button>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary" ng-click="play('Rock');"><i class="fas fa-hand-rock fa-4x"></i></button>
+    <button type="button" class="btn btn-secondary" ng-click="play('Paper');"><i class="fas fa-hand-paper fa-4x"></i></button>
+    <button type="button" class="btn btn-secondary" ng-click="play('Scissors');"><i class="fas fa-hand-scissors fa-4x"></i></button>
+  </div>
+
+  <br><br>
+
+
 </div>
 
 
