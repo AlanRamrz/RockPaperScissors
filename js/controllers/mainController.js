@@ -2,13 +2,16 @@ app.controller('mainController',function($scope){
 
   $scope.you = 0;
   $scope.computer = 0;
+  $scope.computerSelect = '';
+  $scope.youSelect = '';
 
-  $scope.play = function(youSelect){
-    
-    var computerSelect = getComputerSelection();
-    var result = processGame[youSelect][computerSelect];
+  $scope.play = function(yourSelection){
 
-    alert("Computer choose: " + computerSelect);
+    $scope.youSelect = yourSelection;
+    $scope.computerSelect = getComputerSelection();
+    var result = processGame[$scope.youSelect][$scope.computerSelect];
+
+    //alert("Computer choose: " + $scope.computerSelect);
 
     switch(result) {
     case -1:
